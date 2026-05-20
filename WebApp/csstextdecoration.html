@@ -1,0 +1,49 @@
+<!--
+  text-decoration: none | underline | overline | line-through | blink
+  text-decoration-color: <color>
+    text-decoration-style: solid | double | dotted | dashed | wavy
+
+-->
+    <style>
+    .container {
+      width: 300px;
+      border: 1px solid black;
+    }
+    .underline {
+      text-decoration: underline;
+    }
+    .overline {
+      text-decoration: overline;
+    }
+    .line-through {
+      text-decoration: line-through;
+      text-decoration-color: red;
+        text-decoration-style: double;
+    }
+    .dashed {
+      text-decoration: underline dashed red;
+    }
+    .wavy {
+      text-decoration: underline wavy blue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container underline">
+        <p>This text is underlined.</p>
+    </div>
+    <div class="container overline">
+        <p>This text has an overline.</p>
+    </div>
+    <div class="container line-through">
+        <p>This text has a line through it.</p>
+    </div>
+    <div class="container dashed">
+        <p>This text has a dashed underline.</p>
+    </div>
+    <div class="container wavy">
+        <p>This text has a wavy underline.</p>
+    </div>
+</body>
+</html>

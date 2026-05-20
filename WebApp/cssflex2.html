@@ -1,0 +1,29 @@
+<!--
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+-->
+  <style>
+
+    .flex-container {
+      display: flex;
+      /* justify-content: flex-start; Change this to flex-end, center, space-between, space-around, or space-evenly to see different layouts */
+      /* justify-content: flex-end; */
+      /* justify-content: center; */
+      justify-content: space-between;
+      /* justify-content: space-around; */
+      /* justify-content: space-evenly; */
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .flex-item {
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin: 5px;
+      border: 1px solid #999;
+    }
+
+  </style>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>

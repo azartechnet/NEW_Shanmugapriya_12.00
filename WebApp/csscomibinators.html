@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>css combinators</title>
+        <style>
+            /* Example of descendant combinator */
+            /* div p {
+                color: blue;
+                background-color: yellow;
+            } */
+                /* Example of child combinator */
+            /* div > p {
+                font-weight: bold;
+                background-color: yellow;
+            } */
+
+          /* Example of adjacent sibling combinator */
+            /* h1 + p {
+                background-color: yellow
+            } */
+
+            /* Example of general sibling combinator */
+             h1 ~ p {
+                color: green;
+                background-color: yellow;
+            } 
+
+
+        </style>
+    </head>
+    <body>
+        <h1>CSS Combinators Example
+ 
+            <p>This is h1 para</p>
+
+        </h1>
+        <p>This paragraph is a sibling of the h1 element and will be styled with the adjacent sibling combinator.</p>
+        <p>This paragraph is also a sibling of the h1 element and will be styled with the general sibling combinator.</p>
+        <div>
+            <p>This paragraph is a descendant of the div element and will be styled with the descendant combinator.</p>
+            <p>This paragraph is a child of the div element and will be styled with the child combinator.</p>
+        </div>
+        <p>This is outside para</p>
+    </body>
+</html>

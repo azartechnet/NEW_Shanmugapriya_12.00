@@ -1,0 +1,43 @@
+<!--
+  text-align: left | right | center | justify | start | end
+  text-align-last: left | right | center | justify | start | end
+  direction: ltr | rtl
+  unicode-bidi: normal | embed | bidi-override
+-->
+
+<html>
+<head>
+  <style>
+    .container {
+      width: 300px;
+      border: 1px solid black;
+    }
+    .left {
+      text-align: left;
+    }
+    .right {
+      text-align: right;
+    }
+    .center {
+      text-align: center;
+    }
+    .justify {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+    <div class="container left">
+        <p>This text is aligned to the left.</p>
+    </div>
+    <div class="container right">
+        <p>This text is aligned to the right.</p>
+    </div>
+    <div class="container center">
+        <p>This text is centered.</p>
+    </div>
+    <div class="container justify">
+        <p>This text is justified. It will stretch the lines so that they fill the container width.</p>
+    </div>
+</body>
+</html>
