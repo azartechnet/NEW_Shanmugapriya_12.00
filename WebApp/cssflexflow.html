@@ -1,0 +1,26 @@
+<!--
+ flex-flow: <flex-direction> || <flex-wrap>
+-->
+<style>
+    .container {
+    display: flex;
+    /* flex-flow: row wrap; */
+    /* flex-flow: column wrap; */
+    /* flex-flow: row wrap-reverse; */
+    /* flex-flow: column wrap-reverse; */
+    flex-flow: row nowrap;
+    width: 200px;
+    border: 1px solid black;
+    }
+    .item {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 5px;
+    }
+    </style>
+    <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    </div>
