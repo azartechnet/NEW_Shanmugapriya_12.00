@@ -1,0 +1,35 @@
+<style>
+    h2
+    {
+        width: 350px;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        background-color: red;
+    }
+    #one
+    {
+        animation-timing-function: linear;
+    }
+    #two
+    {
+        animation-timing-function: ease;
+    }
+    #three
+    {
+        animation-timing-function: ease-in;
+    }
+    #four
+    {
+        animation-timing-function: ease-out;
+    }
+    @keyframes example
+    {
+        from {margin-left: 0px;}
+        to {margin-left: 350px;}
+    }
+</style>
+<h2 id="one">Linear</h2>
+<h2 id="two">Ease</h2>
+<h2 id="three">Ease-in</h2>
+<h2 id="four">Ease-out</h2>
