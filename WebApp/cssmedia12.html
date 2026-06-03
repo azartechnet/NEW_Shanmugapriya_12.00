@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Resposive website</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: Arial, sans-serif;
+            }
+            header
+            {
+                background-color: #333;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            nav
+            {
+                background-color: #f2d9d9;
+                padding: 10px;
+                text-align: center;
+            }
+            nav a
+            {
+                color: #333;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 18px;
+            }
+            .container
+            {
+                display:flex;
+                gap: 20px;
+                padding: 20px;
+            }
+            .box
+            {
+                flex:1;
+                background-color: #f2f2f2;
+                padding: 20px;
+                text-align: center;
+                border-radius: 5px;
+            }
+            .footer
+            {
+               background-color: black;
+               color: white;
+                text-align: center;
+                padding: 10px;
+            }
+            .button
+            {
+                background-color: #333;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            /*Table view*/
+            @media screen and (max-width: 768px)
+            {
+                .header, nav, .footer
+                {
+                    text-align: center;
+                    padding: 10px;
+
+                }
+                .container
+                {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+         <header>
+            <h1>My Website</h1>
+         </header>
+         <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+         </nav>
+         <div class="container">
+              <div class="box">
+                <h2>Box 1</h2>
+                <p>This is the first box.</p>
+                <button class="button">Click Me</button>
+              </div>
+                <div class="box">
+                    <h2>Box 2</h2>
+                    <p>This is the second box.</p>
+                    <button class="button">Click Me</button>
+                </div>
+                <div class="box">
+                    <h2>Box 3</h2>
+                    <p>This is the third box.</p>
+                    <button class="button">Click Me</button>
+                </div>
+         </div>
+         
+         <footer class="footer">
+            <p>&copy; 2024 My Website</p>
+        </footer>
+
+    </body>
+</html>

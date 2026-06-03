@@ -1,0 +1,59 @@
+<!--Resposive Table-->
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    @media screen and (max-width: 600px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        
+        thead tr {
+            display: none;
+        }
+        
+        td {
+            position: relative;
+            padding-left: 50%;
+        }
+        
+        td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding-left: 10px;
+            font-weight: bold;
+        }
+    }
+</style>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>25</td>
+                <td>Los Angeles</td>
+            </tr>
+        </tbody>
+    </table>
