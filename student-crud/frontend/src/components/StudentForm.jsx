@@ -1,60 +1,108 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import api from "../services/api";
-function StudentForm()
-{
 
-    const [student,setStudent]=useState({
-        name:"",
-        email:"",
-        course:""
+function StudentForm({ editStudent, setEditStudent }) {
+
+    const [student, setStudent] = useState({
+        name: "",
+        email: "",
+        course: ""
     });
 
-    const handleChange=(e)=>{
-        setStudent({...student,[e.target.name]:e.target.value})
+    useEffect(() => {
+        if (editStudent) {
+            setStudent(editStudent);
+        }
+    }, [editStudent]);
+
+    const handleChange = (e) => {
+        setStudent({
+            ...student,
+            [e.target.name]: e.target.value
+        });
     };
 
-    const handleSubmit=async(e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try
-        {
-            await api.post("/students",student);
-            alert("Student Register Sucess!!!");
-            setStudent({
-                name:"",
-                email:"",
-                course:""
-            })
-        }catch(error)
-        {
-            alert("Error");
-            console.log(error);
-        }
-    }
 
-    return(
-        
-        <div className="container mt-4">
-                <h1>This is StudentForm</h1>
-               <form onSubmit={handleSubmit}>
-                   <div className="mb-3">
-                      <label>Name</label>
-                      <input type="text" className="form-control" 
-                      name="name" value={student.name} onChange={handleChange} required/>
-                   </div>
-                   <div className="mb-3">
-                      <label>Email</label>
-                      <input type="email" className="form-control" 
-                      name="email" value={student.email} onChange={handleChange} required/>
-                   </div>
-                   <div className="mb-3">
-                      <label>Course</label>
-                      <input type="text" className="form-control" 
-                      name="course" value={student.course} onChange={handleChange} required/>
-                   </div>
-                   <button className="btn btn-primary">Register</button>
-                </form> 
+        try {
+
+            if (student._id) {
+
+                await api.put(`/students/${student._id}`, student);
+
+                alert("Student Updated Successfully");
+
+            } else {
+
+                await api.post("/students", student);
+
+                alert("Student Added Successfully");
+            }
+
+            setStudent({
+                name: "",
+                email: "",
+                course: ""
+            });
+
+            setEditStudent(null);
+
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    return (
+        <div className="container">
+
+            <h3>
+                {student._id ? "Update Student" : "Add Student"}
+            </h3>
+
+            <form onSubmit={handleSubmit}>
+
+                <div className="mb-3">
+                    <input
+                        type="text"
+                        name="name"
+                        className="form-control"
+                        placeholder="Name"
+                        value={student.name}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="mb-3">
+                    <input
+                        type="email"
+                        name="email"
+                        className="form-control"
+                        placeholder="Email"
+                        value={student.email}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="mb-3">
+                    <input
+                        type="text"
+                        name="course"
+                        className="form-control"
+                        placeholder="Course"
+                        value={student.course}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <button className="btn btn-primary">
+                    {student._id ? "Update" : "Save"}
+                </button>
+
+            </form>
 
         </div>
-    )
+    );
 }
+
 export default StudentForm;

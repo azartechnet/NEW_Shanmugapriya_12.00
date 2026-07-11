@@ -1,13 +1,25 @@
+import { useState } from "react";
+import StudentForm from "./components/StudentForm";
+import StudentTable from "./components/StudentTable";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import StudentForm  from "./components/StudentForm";
+function App() {
+    const [editStudent, setEditStudent] = useState(null);
 
-function App()
-{
-   return(
-    <div>
-      <h2>This is CRUD Application</h2>
-       <StudentForm/>
-    </div>
-   )  
-};
+    return (
+        <div className="container mt-4">
+            <h2 className="text-center">Student CRUD Application</h2>
+
+            <StudentForm
+                editStudent={editStudent}
+                setEditStudent={setEditStudent}
+            />
+
+            <StudentTable
+                setEditStudent={setEditStudent}
+            />
+        </div>
+    );
+}
+
 export default App;
