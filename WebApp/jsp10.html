@@ -1,0 +1,10 @@
+<script>
+    var reverse = 0;
+    var n = parseInt(prompt("Enter the n value is::"))
+    while (n != 0) {
+        reverse = reverse * 10;
+        reverse = reverse + n % 10;
+        n = Math.floor(n / 10);
+    }
+    document.write("Reverse value is::" + reverse)
+</script>
