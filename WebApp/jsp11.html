@@ -1,0 +1,16 @@
+<script>
+    var s = 0;
+    n =parseInt(prompt("Enter the n value is:"))
+    temp = n
+    while (n > 0) {
+        rem = n % 10;
+        s = s + rem * rem * rem;
+        n =Math.floor(n / 10);
+    }
+    if (temp == s) {
+        document.write("Its is armstrong")
+    }
+    else {
+        document.write("Its is not armstrong")
+    }
+</script>
