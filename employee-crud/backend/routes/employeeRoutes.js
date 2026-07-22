@@ -4,4 +4,7 @@ const employeeController=require("../controllers/employeeController")
 router.get(
     "/",employeeController.getEmployees
 )
+router.get(
+"/:id",employeeController.getEmployee
+)
 module.exports=router;
