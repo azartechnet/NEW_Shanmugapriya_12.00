@@ -10,4 +10,17 @@ router.get(
 "/:id",empController.getEmployee
 )
 
+router.post(
+    "/",empController.createEmployee
+)
+
+router.put(
+    "/:id",
+    empController.updateEmployee
+);
+
+router.delete(
+    "/:id",
+    empController.deleteEmployee
+);
 module.exports=router;
