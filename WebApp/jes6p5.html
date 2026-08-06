@@ -1,0 +1,15 @@
+<p id="d1"></p>
+<script>
+    const q1=["red","green","blue"];
+    const q2=["yellow","orange","pink"];
+    const q3=[...q1,...q2];
+    document.getElementById("d1").innerHTML=q3;
+</script>
+<p id="d2"></p>
+<script>
+    const numbers=[1,2,3,4,5];
+    let max=Math.max(...numbers);
+    let min=Math.min(...numbers);
+    document.getElementById("d2").innerHTML="Max: "+max+" Min: "+min;
+
+</script>

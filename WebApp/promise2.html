@@ -1,0 +1,18 @@
+<script>
+    function fetchData()
+    {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                let   =true;
+                if(dataFound){
+                    resolve("DataFetched..")
+                }else{
+                    reject("Failed to fetch data")
+                }
+            },2000)
+        })
+    }
+    fetchData()
+    .then((result)=>console.log(result))
+    .catch((error)=>console.log(error))
+</script>

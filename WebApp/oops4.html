@@ -1,0 +1,21 @@
+<script>
+    //Inheritance
+    class Animal
+    {
+        eat()
+        {
+            document.write("Animal is eating<br>");
+        }
+
+    }
+    class Dog extends Animal
+    {
+        bark()
+        {
+            document.write("Dog is barking<br>");
+        }
+    }
+    const d = new Dog();
+    d.eat();
+    d.bark();
+</script>

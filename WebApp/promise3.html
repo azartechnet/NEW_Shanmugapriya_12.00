@@ -1,0 +1,22 @@
+<script>
+    function getUser()
+    {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const user={id:101,name:"mohamed",role:"Trainer"}
+                if(user){
+                    resolve(user);
+                }else{
+                    reject("User not found")
+                }
+            },2000)
+        })
+    }
+    getUser()
+    .then((data)=>{
+        console.log("UserData:",data)
+    })
+    .catch((error)=>{
+        console.error("Error::",error)
+    })
+</script>
